@@ -1,0 +1,13 @@
+{
+    "displayName": "taxiMaths",
+    "appName": "taximaths",
+    "description": "taxi calculator ",
+    "lastModified": "2021-06-26T11:54:15.191Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "classic",
+    "templateName": "blank",
+    "createDate": "2021-06-26T11:54:13.890Z",
+    "analyticsId": "5fdf15ad-c746-acfa-0e99-ab98e481e706",
+    "createdStudioVersion": "7.7.2"
+}
