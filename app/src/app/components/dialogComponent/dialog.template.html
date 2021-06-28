@@ -1,0 +1,49 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxFlex="100       " fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <mat-card>
+      <mat-card-title align="center">Add Trip</mat-card-title>
+
+      <mat-card-subtitle align="center">Trips to Travel</mat-card-subtitle>
+
+      <img mat-card-image>
+
+      <mat-card-content style="width: 50%;">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <form [formGroup]="formValue">
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput name="currentlocation" placeholder="From" [required]="false" formControlName="currentlocation">
+                <mat-error align="start" *ngIf="formValue.get(&apos;currentlocation&apos;).touched &amp;&amp; formValue.get(&apos;currentlocation&apos;).hasError(&apos;required&apos;)">Departure Location is required</mat-error>
+                <mat-error align="start" *ngIf="formValue.get(&apos;currentlocation&apos;).touched &amp;&amp; formValue.get(&apos;currentlocation&apos;).hasError(&apos;pattern&apos;)">Departure should only contain letters.</mat-error>
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput name="to" placeholder="To" [required]="false" formControlName="to">
+                <mat-error align="start" *ngIf="formValue.get(&apos;to&apos;).touched &amp;&amp; formValue.get(&apos;to&apos;).hasError(&apos;required&apos;)">Destination is required</mat-error>
+                <mat-error align="start" *ngIf="formValue.get(&apos;to&apos;).touched &amp;&amp; formValue.get(&apos;to&apos;).hasError(&apos;pattern&apos;)">Destination should only contain letters.</mat-error>
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput name="amount" placeholder="Amount" [required]="false" formControlName="amount">
+                <mat-error align="start" *ngIf="formValue.get(&apos;amount&apos;).touched &amp;&amp; formValue.get(&apos;amount&apos;).hasError(&apos;required&apos;)">Amount is required</mat-error>
+                <mat-error align="start" *ngIf="formValue.get(&apos;amount&apos;).touched &amp;&amp; formValue.get(&apos;amount&apos;).hasError(&apos;pattern&apos;)">Amount should only contain Numbers.</mat-error>
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <mat-form-field [appearance]="&apos;legacy&apos;">
+                <input matInput placeholder="Date " [matDatepicker]="picker" formControlName="currentDate" name="currentDate" [required]="false" [disabled]="false">
+                <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+                <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+                <mat-error align="start" *ngIf="formValue.get(&apos;currentDate&apos;).touched &amp;&amp; formValue.get(&apos;currentDate&apos;).hasError(&apos;required&apos;)">Date is required</mat-error>
+              </mat-form-field>
+            </div><button mat-raised-button color="primary" (click)="addTrip(formValue)">Add Trip</button>
+          </form>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions></mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,192 @@
+[
+    {
+        "id": "sd_cdh5njs6VlBCMLWh",
+        "type": "tab",
+        "createdDate": "2021-06-26T13:57:16.867Z",
+        "relativeParentPath": "",
+        "label": "registerUser",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "registerUser"
+    },
+    {
+        "id": "sd_Z9UjSM7Q5kAHuB0A",
+        "type": "Start",
+        "z": "sd_cdh5njs6VlBCMLWh",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "registerUser",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "form",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "registerUser",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 65,
+        "y": 200,
+        "wires": [
+            [
+                "sd_dtaSNOv2wvPB4F8c"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "registerUser"
+    },
+    {
+        "id": "sd_dtaSNOv2wvPB4F8c",
+        "type": "Script",
+        "z": "sd_cdh5njs6VlBCMLWh",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.result = {}\n\nconsole.log(bh.input)",
+        "functionName": "sd_dtaSNOv2wvPB4F8c",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 205,
+        "y": 200,
+        "wires": [
+            [
+                "sd_sa6cdlDGAkxpzg0D"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_sa6cdlDGAkxpzg0D",
+        "type": "CallSSDApi",
+        "z": "sd_cdh5njs6VlBCMLWh",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlValue": "adduser",
+        "url": "adduser",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.form",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "form"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_sa6cdlDGAkxpzg0D",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 360,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_3n1bymUGaUJA9p7H",
+        "type": "Start",
+        "z": "sd_cdh5njs6VlBCMLWh",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "getUsers",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getUsers",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 80,
+        "y": 320,
+        "wires": [
+            [
+                "sd_CGwSTANOfxtz6Tnz"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "registerUser"
+    },
+    {
+        "id": "sd_CGwSTANOfxtz6Tnz",
+        "type": "CallSSDApi",
+        "z": "sd_cdh5njs6VlBCMLWh",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlValue": "getUsers",
+        "url": "getUsers",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_CGwSTANOfxtz6Tnz",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 245,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true
+    }
+]

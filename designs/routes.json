@@ -1,9 +1,26 @@
 {
     "routes": [
         {
+            "component": "taxicalcComponent",
+            "path": "taxicalc"
+        },
+        {
+            "component": "loginregComponent",
+            "path": "loginreg"
+        },
+        {
+            "component": "tripsaddedComponent",
+            "path": "tripsadded"
+        },
+        {
+            "component": "dialogComponent",
+            "path": "dialog"
+        },
+        {
             "path": "''",
-            "redirectTo": "",
-            "pathMatch": "full"
+            "redirectTo": "loginreg",
+            "pathMatch": "full",
+            "default": true
         },
         {
             "path": "**",

@@ -1,0 +1,14 @@
+{
+    "appPageId": "2da59eac-0fdc-a3f4-4b9e-051c3ffb4d0b",
+    "appPageName": "taxiCalc",
+    "componentName": "taxicalcComponent",
+    "selectorName": "bh-taxicalc",
+    "htmlFileName": "taxicalc.template.html",
+    "tsFileName": "taxicalc.component.ts",
+    "createDate": "2021-06-26T12:15:39.242Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

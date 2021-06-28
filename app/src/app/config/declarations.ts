@@ -15,6 +15,14 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-dialogComponent
+import { dialogComponent } from '../components/dialogComponent/dialog.component';
+//CORE_REFERENCE_IMPORT-tripsaddedComponent
+import { tripsaddedComponent } from '../components/tripsaddedComponent/tripsadded.component';
+//CORE_REFERENCE_IMPORT-loginregComponent
+import { loginregComponent } from '../components/loginregComponent/loginreg.component';
+//CORE_REFERENCE_IMPORT-taxicalcComponent
+import { taxicalcComponent } from '../components/taxicalcComponent/taxicalc.component';
 
 /**
  * Reads datasource object and injects the datasource object into window object
@@ -42,6 +50,14 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-dialogComponent
+dialogComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-tripsaddedComponent
+tripsaddedComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginregComponent
+loginregComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-taxicalcComponent
+taxicalcComponent,
 
 ];
 
@@ -68,5 +84,5 @@ export const appProviders = [
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-export const appRoutes = [{ path: '', redirectTo: '/', pathMatch: 'full' }, { path: '**', component: PageNotFoundComponent }];
+export const appRoutes = [{path: 'taxicalc', component: taxicalcComponent},{path: 'loginreg', component: loginregComponent},{path: 'tripsadded', component: tripsaddedComponent},{path: 'dialog', component: dialogComponent},{path: '', redirectTo: 'loginreg', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

@@ -1,0 +1,376 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_CdM2YN1mvY8wd1yc",
+        "type": "tab",
+        "createdDate": "2021-06-26T13:57:44.134Z",
+        "relativeParentPath": "",
+        "label": "formValueDatabase",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "formValueDatabase"
+    },
+    {
+        "id": "sd_hqeUsTPC9KLvJgLA",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_CdM2YN1mvY8wd1yc",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "adduser",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "adduser": {
+                "post": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "uploadFileOptions": {},
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "sd_V7Ko786CBv3TmngC"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "formValueDatabase",
+        "functionName": "sd_hqeUsTPC9KLvJgLA"
+    },
+    {
+        "id": "sd_V7Ko786CBv3TmngC",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_CdM2YN1mvY8wd1yc",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_uvyVN2fYfNYMS47U",
+        "collection": "\"users\"",
+        "options": "",
+        "resultMapping": "bh.local.result",
+        "operation": "insertOne",
+        "argumentArray": [
+            "document"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh.input.body",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_V7Ko786CBv3TmngC",
+        "category": "Storage",
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "str",
+                "value": "users",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "document": {
+                "type": "bh.input",
+                "value": "body",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 340,
+        "y": 240,
+        "wires": [
+            [
+                "sd_KDU6pBlkXH8KKxUM"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_KDU6pBlkXH8KKxUM",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_CdM2YN1mvY8wd1yc",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_KDU6pBlkXH8KKxUM",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 520,
+        "y": 240,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_QWpjuQ1rC7WYrrZN",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_CdM2YN1mvY8wd1yc",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "getUsers",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "getUsers": {
+                "get": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 145,
+        "y": 380,
+        "wires": [
+            [
+                "sd_FOkPWGiP9QKbJnKe"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "formValueDatabase",
+        "functionName": "sd_QWpjuQ1rC7WYrrZN"
+    },
+    {
+        "id": "sd_FOkPWGiP9QKbJnKe",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_CdM2YN1mvY8wd1yc",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_uvyVN2fYfNYMS47U",
+        "collection": "\"users\"",
+        "options": "",
+        "resultMapping": "bh.local.result",
+        "operation": "find",
+        "argumentArray": [
+            "query"
+        ],
+        "aggregate": "bh",
+        "operations": "",
+        "query": "bh.input.query",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_FOkPWGiP9QKbJnKe",
+        "category": "Storage",
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "str",
+                "value": "users",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh.input",
+                "value": "query",
+                "constant": false
+            },
+            "document": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "aggregate": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 285,
+        "y": 380,
+        "wires": [
+            [
+                "sd_WRl4ip6tMeeSaINK"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_WRl4ip6tMeeSaINK",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_CdM2YN1mvY8wd1yc",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_WRl4ip6tMeeSaINK",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 525,
+        "y": 380,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    }
+]

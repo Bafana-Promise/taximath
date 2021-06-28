@@ -1,0 +1,22 @@
+{
+    "2da59eac-0fdc-a3f4-4b9e-051c3ffb4d0b": {
+        "appPageName": "taxiCalc",
+        "componentName": "taxicalcComponent",
+        "createDate": "2021-06-26T12:15:39.242Z"
+    },
+    "79aee940-69b0-cd65-3e18-bc43778888f6": {
+        "appPageName": "loginReg",
+        "componentName": "loginregComponent",
+        "createDate": "2021-06-26T12:15:57.527Z"
+    },
+    "50394914-73e7-d912-ca37-a22595a65b83": {
+        "appPageName": "tripsAdded",
+        "componentName": "tripsaddedComponent",
+        "createDate": "2021-06-26T12:16:27.843Z"
+    },
+    "b2e27dfe-5d80-b9e9-7e85-571d93cd13a0": {
+        "appPageName": "dialog",
+        "componentName": "dialogComponent",
+        "createDate": "2021-06-26T12:16:39.162Z"
+    }
+}

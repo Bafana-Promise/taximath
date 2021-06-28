@@ -1,0 +1,37 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <h1>
+          Taxi Maths</h1>
+      </div>
+      <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+        <h1>
+          Calculator</h1>
+        <h1>
+          Tracker</h1>
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" fxLayoutGap="12px" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="openDialog()">Add Trip</button></div>
+        <mat-card>
+          <img mat-card-image>
+
+          <mat-card-content>
+            <div>
+              Depart</div>
+            <div>
+              Destination</div>
+            <div>
+              Amount</div>
+            <div>
+              Date</div>
+          </mat-card-content>
+
+          <mat-card-actions></mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

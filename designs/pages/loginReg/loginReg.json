@@ -1,0 +1,14 @@
+{
+    "appPageId": "79aee940-69b0-cd65-3e18-bc43778888f6",
+    "appPageName": "loginReg",
+    "componentName": "loginregComponent",
+    "selectorName": "bh-loginreg",
+    "htmlFileName": "loginreg.template.html",
+    "tsFileName": "loginreg.component.ts",
+    "createDate": "2021-06-26T12:15:57.527Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

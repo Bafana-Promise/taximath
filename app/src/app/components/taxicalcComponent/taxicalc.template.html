@@ -1,0 +1,59 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <h1>
+          Taxi Maths</h1>
+      </div>
+      <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+        <h2>
+          Calculator</h2>
+        <h2>
+          Tracker</h2>
+      </div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <mat-card>
+        <mat-card-content>
+          <form [formGroup]="taxiCalcForm">
+            <div fxLayout="column wrap" fxLayoutGap="14px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput name="taxiFare" type="number" placeholder="Taxi Fare" [required]="false" formControlName="taxiFare">
+                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;taxiFare&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;taxiFare&apos;).hasError(&apos;required&apos;)">Taxi Fare is required</mat-error>
+                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;taxiFare&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;taxiFare&apos;).hasError(&apos;pattern&apos;)">Taxi Fare should only contain letters</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput name="numOfPassenders" type="number" placeholder="Passenger" [required]="false" formControlName="numOfPassenders">
+                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;numOfPassenders&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;numOfPassenders&apos;).hasError(&apos;required&apos;)">Number Of Passengers is required</mat-error>
+                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;numOfPassenders&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;numOfPassenders&apos;).hasError(&apos;pattern&apos;)">Taxi Fare should only contain letters</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput name="amountRec" type="number" placeholder="Amount" [required]="false" formControlName="amountRec">
+                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;amountRec&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;amountRec&apos;).hasError(&apos;required&apos;)">Money Recieved is required</mat-error>
+                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;amountRec&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;amountRec&apos;).hasError(&apos;pattern&apos;)">Taxi Fare should only contain letters</mat-error>
+                </mat-form-field>
+              </div>
+              <div>
+                Change : R {{getChange(result)}}</div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                <div fxLayout="row wrap" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="primary" (click)="calculate(taxiCalcForm)">Calculate</button></div>
+                  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="warn">Reset</button></div>
+                </div>
+              </div>
+              <div>
+                Drivers Money : R {{multpliedNum}}</div>
+            </div>
+          </form>
+        </mat-card-content>
+
+        <mat-card-actions></mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
