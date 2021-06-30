@@ -101,7 +101,7 @@
                 },
                 {
                     "_key": "fxLayoutGap",
-                    "_value": "",
+                    "_value": "12px",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -473,7 +473,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Taxi Maths",
+                                    "_value": "Taxi Maths ",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -752,7 +752,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Calculator",
+                                    "_value": "<span routerLink='/taxicalc'>Calculator</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -964,7 +964,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Tracker",
+                                    "_value": "<span routerLink='/loginreg'>Tracker</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -973,13 +973,13 @@
                     }
                 }
             },
-            "11947cfe-f93e-95e4-389f-a1b7575241ee": {
-                "paletteKey": "FlexLayoutRow",
+            "976bcbde-5a7a-91c8-bfcf-0b7a4bae1d42": {
+                "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "6c101dcc-861b-b149-2fe3-0864fd3f782d",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
-                        "_value": "Row",
+                        "_value": "Column",
                         "_type": "kv",
                         "_attrDef": "p",
                         "_useAsLabel": true
@@ -1022,7 +1022,263 @@
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "stretch",
+                        "_value": "start",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[fxShow]",
+                        "_value": "true",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[fxHide]",
+                        "_value": "false",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ],
+                "9f5366f4-9ee6-00b8-df8f-fe4713dff689": {
+                    "paletteKey": "FlexLayoutRow",
+                    "parentEditorKey": "976bcbde-5a7a-91c8-bfcf-0b7a4bae1d42",
+                    "designerReference": [
+                        {
+                            "_key": "componentLabel",
+                            "_value": "Row",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fxFlex",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fxLayoutGap",
+                            "_value": "12px",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "wrap",
+                            "_value": "wrap",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "layoutAlign",
+                            "_value": "start",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "pLayoutAlign",
+                            "_value": "stretch",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[fxShow]",
+                            "_value": "true",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[fxHide]",
+                            "_value": "false",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        }
+                    ],
+                    "92339fff-2d43-ffba-919f-edef3450615b": {
+                        "paletteKey": "NG-RaisedButton",
+                        "parentEditorKey": "9f5366f4-9ee6-00b8-df8f-fe4713dff689",
+                        "designerReference": [
+                            {
+                                "_key": "style",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "buttonname",
+                                "_value": "Add Trip",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "color",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "(click)",
+                                "_value": "openRegDialog()",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[disabled]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[disableRipple]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "type",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "routerLink",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            }
+                        ]
+                    },
+                    "3e24ee36-acec-bb1c-5f5f-4a6440387956": {
+                        "paletteKey": "NG-RaisedButton",
+                        "parentEditorKey": "9f5366f4-9ee6-00b8-df8f-fe4713dff689",
+                        "designerReference": [
+                            {
+                                "_key": "style",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "buttonname",
+                                "_value": "Login Out",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "color",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "(click)",
+                                "_value": "logout()",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[disabled]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[disableRipple]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "type",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "routerLink",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            }
+                        ]
+                    }
+                }
+            },
+            "11947cfe-f93e-95e4-389f-a1b7575241ee": {
+                "paletteKey": "FlexLayoutRow",
+                "parentEditorKey": "6c101dcc-861b-b149-2fe3-0864fd3f782d",
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "Row",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxFlex",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxLayoutGap",
+                        "_value": "12px",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "wrap",
+                        "_value": "wrap",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "layoutAlign",
+                        "_value": "center",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "pLayoutAlign",
+                        "_value": "start",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -1058,7 +1314,7 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": [],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
@@ -1103,137 +1359,15 @@
                             "_value": "false",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "*ngFor",
+                            "_value": "let trip of oneUserTrip",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
-                    "976bcbde-5a7a-91c8-bfcf-0b7a4bae1d42": {
-                        "paletteKey": "FlexLayoutCol",
-                        "parentEditorKey": "f7f18e67-a50e-2b03-76a5-af321f63a0c3",
-                        "designerReference": [
-                            {
-                                "_key": "componentLabel",
-                                "_value": "Column",
-                                "_type": "kv",
-                                "_attrDef": "p",
-                                "_useAsLabel": true
-                            },
-                            {
-                                "_key": "style",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "class",
-                                "_value": "",
-                                "_type": "dav",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "fxFlex",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "fxLayoutGap",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "wrap",
-                                "_value": "wrap",
-                                "_type": "a",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "layoutAlign",
-                                "_value": "start",
-                                "_type": "a",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "pLayoutAlign",
-                                "_value": "stretch",
-                                "_type": "a",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "[fxShow]",
-                                "_value": "true",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "[fxHide]",
-                                "_value": "false",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            }
-                        ],
-                        "92339fff-2d43-ffba-919f-edef3450615b": {
-                            "paletteKey": "NG-RaisedButton",
-                            "parentEditorKey": "976bcbde-5a7a-91c8-bfcf-0b7a4bae1d42",
-                            "designerReference": [
-                                {
-                                    "_key": "style",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "class",
-                                    "_value": "",
-                                    "_type": "dav",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "buttonname",
-                                    "_value": "Add Trip",
-                                    "_type": "a",
-                                    "_attrDef": "p",
-                                    "_useAsLabel": true
-                                },
-                                {
-                                    "_key": "color",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "(click)",
-                                    "_value": "openDialog()",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "[disabled]",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "[disableRipple]",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "type",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "routerLink",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                }
-                            ]
-                        }
-                    },
-                    "0a946124-5f4e-9474-6401-2f68feb760fa": {
+                    "dab98bca-496d-3d5c-a365-dfbcb1ae7110": {
                         "paletteKey": "ad-card",
                         "parentEditorKey": "f7f18e67-a50e-2b03-76a5-af321f63a0c3",
                         "isAdvancedComponent": true,
@@ -1253,7 +1387,7 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -1264,9 +1398,9 @@
                                 "_attrDef": "p"
                             }
                         ],
-                        "2f45383c-cc6e-3206-d8ac-c3149df032a5": {
-                            "paletteKey": "ng-card-image",
-                            "parentEditorKey": "0a946124-5f4e-9474-6401-2f68feb760fa",
+                        "1dbdeaf7-f02c-b0c2-3d45-176987653f81": {
+                            "paletteKey": "ng-card-title",
+                            "parentEditorKey": "dab98bca-496d-3d5c-a365-dfbcb1ae7110",
                             "isAdvancedChildComponent": true,
                             "designerReference": [
                                 {
@@ -1282,46 +1416,56 @@
                                     "_attrDef": "p"
                                 },
                                 {
-                                    "_key": "alt",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "imgSrc",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "[src]",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "imgSecure",
-                                    "_value": "",
+                                    "_key": "Title",
+                                    "_value": "Trip",
                                     "_type": "a",
-                                    "_attrDef": "p"
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
                                 },
                                 {
-                                    "_key": "[collectionName]",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "[imageFilter]",
-                                    "_value": "",
+                                    "_key": "align",
+                                    "_value": "center",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 }
                             ]
                         },
-                        "c3a5ab46-cc02-d4fd-cb21-44bee1ce6403": {
+                        "3f5d6fd7-a532-bd6a-233d-aab4ed882bca": {
+                            "paletteKey": "ng-card-subtitle",
+                            "parentEditorKey": "dab98bca-496d-3d5c-a365-dfbcb1ae7110",
+                            "isAdvancedChildComponent": true,
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "dav",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "Sub Title",
+                                    "_value": "Trip Traveled",
+                                    "_type": "a",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true,
+                                    "_isVisibleForParent": true
+                                },
+                                {
+                                    "_key": "align",
+                                    "_value": "center",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                }
+                            ]
+                        },
+                        "3bbec99a-2e5d-65a8-795f-69339209ff27": {
                             "paletteKey": "ng-card-content",
-                            "parentEditorKey": "0a946124-5f4e-9474-6401-2f68feb760fa",
+                            "parentEditorKey": "dab98bca-496d-3d5c-a365-dfbcb1ae7110",
                             "isAdvancedChildComponent": true,
                             "designerReference": [
                                 {
@@ -1343,9 +1487,9 @@
                                     "_attrDef": "p"
                                 }
                             ],
-                            "9431f3cd-c3cb-4258-e652-2d546c48dcff": {
+                            "63375e01-cdf4-6a37-449c-2fc0456e50aa": {
                                 "paletteKey": "Html5",
-                                "parentEditorKey": "c3a5ab46-cc02-d4fd-cb21-44bee1ce6403",
+                                "parentEditorKey": "3bbec99a-2e5d-65a8-795f-69339209ff27",
                                 "isAdvancedComponent": true,
                                 "designerReference": [
                                     {
@@ -1529,9 +1673,9 @@
                                         "_visibility": false
                                     }
                                 ],
-                                "cdb78c98-a17a-4682-232f-9d72448cec75": {
+                                "b9f5a43b-58a1-608a-6178-77d7297971a3": {
                                     "paletteKey": "html-editor",
-                                    "parentEditorKey": "9431f3cd-c3cb-4258-e652-2d546c48dcff",
+                                    "parentEditorKey": "63375e01-cdf4-6a37-449c-2fc0456e50aa",
                                     "isAdvancedChildComponent": true,
                                     "designerReference": [
                                         {
@@ -1548,16 +1692,16 @@
                                         },
                                         {
                                             "_key": "html",
-                                            "_value": "Depart",
+                                            "_value": "Depart : {{trip.currentlocation}}",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         }
                                     ]
                                 }
                             },
-                            "8c000cf9-d6e3-69b3-fbac-aa75af9c8e3b": {
+                            "a619aa3e-7f88-21ee-9785-f9b24623a44b": {
                                 "paletteKey": "Html5",
-                                "parentEditorKey": "c3a5ab46-cc02-d4fd-cb21-44bee1ce6403",
+                                "parentEditorKey": "3bbec99a-2e5d-65a8-795f-69339209ff27",
                                 "isAdvancedComponent": true,
                                 "designerReference": [
                                     {
@@ -1741,9 +1885,9 @@
                                         "_visibility": false
                                     }
                                 ],
-                                "54e03236-9c8a-2af7-3736-365f9bbc21b9": {
+                                "8468012f-9a58-8e35-8609-587168963629": {
                                     "paletteKey": "html-editor",
-                                    "parentEditorKey": "8c000cf9-d6e3-69b3-fbac-aa75af9c8e3b",
+                                    "parentEditorKey": "a619aa3e-7f88-21ee-9785-f9b24623a44b",
                                     "isAdvancedChildComponent": true,
                                     "designerReference": [
                                         {
@@ -1760,16 +1904,16 @@
                                         },
                                         {
                                             "_key": "html",
-                                            "_value": "Destination",
+                                            "_value": "Destination : {{trip.to}}",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         }
                                     ]
                                 }
                             },
-                            "9d444b70-d951-8af5-c1ec-b0671cf673ea": {
+                            "c02633a6-4386-e25b-4037-1df4d621245e": {
                                 "paletteKey": "Html5",
-                                "parentEditorKey": "c3a5ab46-cc02-d4fd-cb21-44bee1ce6403",
+                                "parentEditorKey": "3bbec99a-2e5d-65a8-795f-69339209ff27",
                                 "isAdvancedComponent": true,
                                 "designerReference": [
                                     {
@@ -1953,9 +2097,9 @@
                                         "_visibility": false
                                     }
                                 ],
-                                "203f85ea-7ad7-7e24-d0de-3b26f80f8bc1": {
+                                "4b2711cc-3d72-56f4-8ab6-41e268213a8f": {
                                     "paletteKey": "html-editor",
-                                    "parentEditorKey": "9d444b70-d951-8af5-c1ec-b0671cf673ea",
+                                    "parentEditorKey": "c02633a6-4386-e25b-4037-1df4d621245e",
                                     "isAdvancedChildComponent": true,
                                     "designerReference": [
                                         {
@@ -1972,16 +2116,16 @@
                                         },
                                         {
                                             "_key": "html",
-                                            "_value": "Amount",
+                                            "_value": "Amount : {{trip.amount}}",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         }
                                     ]
                                 }
                             },
-                            "ef35557f-1e3d-726d-3fae-a258f2b15459": {
+                            "2e5bd354-c070-cc40-fed9-aa4810012328": {
                                 "paletteKey": "Html5",
-                                "parentEditorKey": "c3a5ab46-cc02-d4fd-cb21-44bee1ce6403",
+                                "parentEditorKey": "3bbec99a-2e5d-65a8-795f-69339209ff27",
                                 "isAdvancedComponent": true,
                                 "designerReference": [
                                     {
@@ -2165,9 +2309,9 @@
                                         "_visibility": false
                                     }
                                 ],
-                                "b33757f9-cf96-079e-e432-0dcf15cd8518": {
+                                "c2918bbf-858d-bfde-42a0-597ee75e5e70": {
                                     "paletteKey": "html-editor",
-                                    "parentEditorKey": "ef35557f-1e3d-726d-3fae-a258f2b15459",
+                                    "parentEditorKey": "2e5bd354-c070-cc40-fed9-aa4810012328",
                                     "isAdvancedChildComponent": true,
                                     "designerReference": [
                                         {
@@ -2184,7 +2328,7 @@
                                         },
                                         {
                                             "_key": "html",
-                                            "_value": "Date",
+                                            "_value": "Date : {{trip.currentDate | date: 'medium'}} ",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         }
@@ -2192,9 +2336,9 @@
                                 }
                             }
                         },
-                        "c1548b0a-39b2-f68f-7553-87d8df3661a6": {
+                        "892d06bd-5003-a207-ca36-31267d6fceb1": {
                             "paletteKey": "ng-card-action",
-                            "parentEditorKey": "0a946124-5f4e-9474-6401-2f68feb760fa",
+                            "parentEditorKey": "dab98bca-496d-3d5c-a365-dfbcb1ae7110",
                             "isAdvancedChildComponent": true,
                             "designerReference": [
                                 {

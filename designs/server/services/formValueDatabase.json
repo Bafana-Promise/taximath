@@ -39,7 +39,6 @@
                 }
             }
         },
-        "uploadFileOptions": {},
         "editableListData": {
             "responses": [],
             "params": [],
@@ -170,7 +169,6 @@
             "obj": "bh.local.result",
             "send": "bh.local.result"
         },
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "editableListData": {
@@ -320,7 +318,7 @@
             }
         },
         "__n_excludedFromValidation__": {},
-        "x": 285,
+        "x": 305,
         "y": 380,
         "wires": [
             [

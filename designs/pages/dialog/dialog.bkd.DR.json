@@ -95,7 +95,7 @@
                 },
                 {
                     "_key": "fxFlex",
-                    "_value": "100       ",
+                    "_value": "100",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -156,7 +156,9 @@
                     },
                     {
                         "_key": "class",
-                        "_value": "",
+                        "_value": [
+                            "cardContainer"
+                        ],
                         "_type": "dav",
                         "_attrDef": "p"
                     },
@@ -294,7 +296,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "width: 50%;",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -516,7 +518,9 @@
                                         },
                                         {
                                             "_key": "class",
-                                            "_value": "",
+                                            "_value": [
+                                                "inputWidth"
+                                            ],
                                             "_type": "dav",
                                             "_attrDef": "p"
                                         },
@@ -1333,7 +1337,7 @@
                                         },
                                         {
                                             "_key": "[min]",
-                                            "_value": "",
+                                            "_value": "minDate",
                                             "_type": "kv",
                                             "_attrDef": "p"
                                         },

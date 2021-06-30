@@ -1,0 +1,304 @@
+[
+    {
+        "id": "sd_PmYwQruC6XdabDpX",
+        "type": "tab",
+        "createdDate": "2021-06-28T15:02:53.264Z",
+        "relativeParentPath": "",
+        "label": "tripsOfUser",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "tripsOfUser"
+    },
+    {
+        "id": "sd_xVdU2kQ9yWdRrrSC",
+        "type": "Start",
+        "z": "sd_PmYwQruC6XdabDpX",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "usersTrip",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "trip",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "usersTrip",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 65,
+        "y": 120,
+        "wires": [
+            [
+                "sd_f12rjlWAlV8BxRuW"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "tripsOfUser"
+    },
+    {
+        "id": "sd_f12rjlWAlV8BxRuW",
+        "type": "Script",
+        "z": "sd_PmYwQruC6XdabDpX",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.result = {}\n\nconsole.log(bh.input)",
+        "functionName": "sd_f12rjlWAlV8BxRuW",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 205,
+        "y": 120,
+        "wires": [
+            [
+                "sd_CKpKdjk3aX6AqFLO"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "tripsOfUser"
+    },
+    {
+        "id": "sd_CKpKdjk3aX6AqFLO",
+        "type": "CallSSDApi",
+        "z": "sd_PmYwQruC6XdabDpX",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlValue": "addTripUser",
+        "url": "addTripUser",
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "bh.input.trip",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "trip"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_CKpKdjk3aX6AqFLO",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 365,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_JBTfZ2HrqLL02ksO",
+        "type": "Start",
+        "z": "sd_PmYwQruC6XdabDpX",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "getTrips",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getTrips",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 60,
+        "y": 240,
+        "wires": [
+            [
+                "sd_a7AWiCrbwAJhLrm3"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "tripsOfUser"
+    },
+    {
+        "id": "sd_a7AWiCrbwAJhLrm3",
+        "type": "CallSSDApi",
+        "z": "sd_PmYwQruC6XdabDpX",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlValue": "getTrips",
+        "url": "getTrips",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_a7AWiCrbwAJhLrm3",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 240,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_PvYSmt6RKoVgXsMI",
+        "type": "Start",
+        "z": "sd_PmYwQruC6XdabDpX",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "getOneTrip",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getOneTrip",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 65,
+        "y": 380,
+        "wires": [
+            [
+                "sd_4FJaNgRkzvGjHBGH"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "tripsOfUser"
+    },
+    {
+        "id": "sd_4FJaNgRkzvGjHBGH",
+        "type": "Script",
+        "z": "sd_PmYwQruC6XdabDpX",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.result = {}\nbh.input.query = {\n    email: bh.input.email\n}\nconsole.log(bh.input)\n",
+        "functionName": "sd_4FJaNgRkzvGjHBGH",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 220,
+        "y": 380,
+        "wires": [
+            [
+                "sd_yUfz0TD86cJjb71U"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_yUfz0TD86cJjb71U",
+        "type": "CallSSDApi",
+        "z": "sd_PmYwQruC6XdabDpX",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlValue": "getTrip",
+        "url": "getTrip",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.email",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "email"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "paramMapping": "bh.input.query",
+        "paramMappingObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "query"
+        },
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_yUfz0TD86cJjb71U",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 365,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true
+    }
+]

@@ -136,7 +136,7 @@
                     "_attrDef": "p"
                 }
             ],
-            "d982b3ee-6292-f2e9-9ca1-2283b46f1cf7": {
+            "2aaa3d99-0048-4909-c332-44ec9555da52": {
                 "paletteKey": "FlexLayoutRow",
                 "parentEditorKey": "a996ae27-d8c2-4f1f-1539-8d261f47da28",
                 "designerReference": [
@@ -202,9 +202,9 @@
                         "_attrDef": "p"
                     }
                 ],
-                "8e45b945-dde1-c4d0-a8aa-0582334626b4": {
+                "b65c9204-102c-9c96-af16-e6fdb4a137ad": {
                     "paletteKey": "FlexLayoutRow",
-                    "parentEditorKey": "d982b3ee-6292-f2e9-9ca1-2283b46f1cf7",
+                    "parentEditorKey": "2aaa3d99-0048-4909-c332-44ec9555da52",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -268,9 +268,9 @@
                             "_attrDef": "p"
                         }
                     ],
-                    "0f399cc5-5fee-4c68-87ac-ecceb1cd613c": {
+                    "8bfb1079-63a8-5192-807b-671fb3166bed": {
                         "paletteKey": "Html5",
-                        "parentEditorKey": "8e45b945-dde1-c4d0-a8aa-0582334626b4",
+                        "parentEditorKey": "b65c9204-102c-9c96-af16-e6fdb4a137ad",
                         "isAdvancedComponent": true,
                         "designerReference": [
                             {
@@ -454,9 +454,9 @@
                                 "_visibility": false
                             }
                         ],
-                        "a014b762-2230-ad13-53f5-8eb5051a95f5": {
+                        "1186e3fa-9ea2-ce00-6ab4-f0591bc28e05": {
                             "paletteKey": "html-editor",
-                            "parentEditorKey": "0f399cc5-5fee-4c68-87ac-ecceb1cd613c",
+                            "parentEditorKey": "8bfb1079-63a8-5192-807b-671fb3166bed",
                             "isAdvancedChildComponent": true,
                             "designerReference": [
                                 {
@@ -473,7 +473,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Taxi Maths",
+                                    "_value": "Taxi Maths ",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -481,9 +481,9 @@
                         }
                     }
                 },
-                "4243247b-e4e8-d990-269e-4d54fc5b8652": {
+                "6bd41ae1-60e0-562b-fa65-2755d59c8583": {
                     "paletteKey": "FlexLayoutRow",
-                    "parentEditorKey": "d982b3ee-6292-f2e9-9ca1-2283b46f1cf7",
+                    "parentEditorKey": "2aaa3d99-0048-4909-c332-44ec9555da52",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -547,9 +547,9 @@
                             "_attrDef": "p"
                         }
                     ],
-                    "34c328c1-a90f-6f42-de1d-87eed47f5493": {
+                    "cce11a01-780e-ba73-1dd1-657e3ab2fa5a": {
                         "paletteKey": "Html5",
-                        "parentEditorKey": "4243247b-e4e8-d990-269e-4d54fc5b8652",
+                        "parentEditorKey": "6bd41ae1-60e0-562b-fa65-2755d59c8583",
                         "isAdvancedComponent": true,
                         "designerReference": [
                             {
@@ -560,20 +560,22 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "cusorNav"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
                             {
                                 "_key": "htmlElement",
-                                "_value": "h2",
+                                "_value": "h1",
                                 "_type": "dav",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
                             },
                             {
                                 "_key": "tagType",
-                                "_value": "h2",
+                                "_value": "h1",
                                 "_type": "a",
                                 "_attrDef": "p",
                                 "_visibility": false
@@ -733,9 +735,9 @@
                                 "_visibility": false
                             }
                         ],
-                        "942a2d47-903b-ba1d-cdcb-b9fca447e326": {
+                        "654cf7f3-e1b4-6cae-5a91-df4b85b78311": {
                             "paletteKey": "html-editor",
-                            "parentEditorKey": "34c328c1-a90f-6f42-de1d-87eed47f5493",
+                            "parentEditorKey": "cce11a01-780e-ba73-1dd1-657e3ab2fa5a",
                             "isAdvancedChildComponent": true,
                             "designerReference": [
                                 {
@@ -752,16 +754,16 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Calculator",
+                                    "_value": "<span routerLink='/taxicalc'>Calculator</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
                             ]
                         }
                     },
-                    "371ebcf1-90e7-ff12-88f8-6830994ab9c8": {
+                    "40a22e2c-388b-d9ea-edb2-16869b369d02": {
                         "paletteKey": "Html5",
-                        "parentEditorKey": "4243247b-e4e8-d990-269e-4d54fc5b8652",
+                        "parentEditorKey": "6bd41ae1-60e0-562b-fa65-2755d59c8583",
                         "isAdvancedComponent": true,
                         "designerReference": [
                             {
@@ -772,20 +774,22 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "cusorNav"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
                             {
                                 "_key": "htmlElement",
-                                "_value": "h2",
+                                "_value": "h1",
                                 "_type": "dav",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
                             },
                             {
                                 "_key": "tagType",
-                                "_value": "h2",
+                                "_value": "h1",
                                 "_type": "a",
                                 "_attrDef": "p",
                                 "_visibility": false
@@ -945,9 +949,9 @@
                                 "_visibility": false
                             }
                         ],
-                        "936f19bb-c3b0-cc25-e2fb-99982764b5c3": {
+                        "c6edef62-c786-f465-6d62-e431446be3b2": {
                             "paletteKey": "html-editor",
-                            "parentEditorKey": "371ebcf1-90e7-ff12-88f8-6830994ab9c8",
+                            "parentEditorKey": "40a22e2c-388b-d9ea-edb2-16869b369d02",
                             "isAdvancedChildComponent": true,
                             "designerReference": [
                                 {
@@ -964,7 +968,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Tracker",
+                                    "_value": "<span routerLink='/loginreg'>Tracker</span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
