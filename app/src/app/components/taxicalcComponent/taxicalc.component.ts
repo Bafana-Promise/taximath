@@ -25,6 +25,8 @@ export class taxicalcComponent extends NBaseComponent implements OnInit {
     result;
     moneyShort;
 
+    errorMassege;
+
     constructor(private fb: FormBuilder, private matsnackbar: MatSnackBar) {
         super();
         this.buildForm();

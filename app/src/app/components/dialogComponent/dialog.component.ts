@@ -4,8 +4,8 @@ import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
-
+import { tripsOfUser } from 'app/sd-services/tripsOfUser';
+import { commonService } from 'app/services/common/common.service';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -23,30 +23,55 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class dialogComponent extends NBaseComponent implements OnInit {
     formValue: FormGroup;
-    tripObj:any = {};
+    tripObj: any = {};
+    minDate = new Date();
+    submitted = false;
+    usersTrip = {};
+    loggedInUser: any = {};
 
-    constructor(public dialogRef: MatDialogRef<dialogComponent> , private fb: FormBuilder, private matsnackbar: MatSnackBar) {
+    constructor(public dialogRef: MatDialogRef<dialogComponent>, private fb: FormBuilder,
+        private matsnackbar: MatSnackBar, private tripsService: tripsOfUser,private commonservice: commonService) {
         super();
         this.buildForm();
     }
 
     ngOnInit() {
-
+     this.loggedInUser = this.commonservice.getUser()
     }
 
-    addTrip(form){
-        this.tripObj = form.value;
-        console.log(form.value);
-        this.dialogRef.close(this.tripObj);
+    addTrip(form) {
+        this.submitted = true;
+        if (form.valid) {
+            console.log(form);
+            console.log(form.value);
+            let data = form.value;
+            data['email'] = this.loggedInUser['email'];
+                this.tripsService.usersTrip(data).then(res => {
+                    console.log(res);
+                    this.matsnackbar.open("Trip Stored Successfully", 'Close', {
+                        duration: 2500
+                    });
+                }, err => {
+                    this.matsnackbar.open("Trip not stored ", 'Close', {
+                        duration: 2500
+                    });
+                })
+            window.location.reload()
+        } else {
+            this.matsnackbar.open("Fill in your Detials", 'Close', {
+                duration: 4500
+            });
+        }
     }
 
-        buildForm() {
+    buildForm() {
         this.formValue = this.fb.group({
-            currentlocation: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]],
-            to: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]],
+            currentlocation: ['', [Validators.required, Validators.pattern(/^[ a-zA-Z]+$/)]],
+            to: ['', [Validators.required, Validators.pattern(/^[ a-zA-Z]+$/)]],
             amount: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
-            currentDate: ['', [Validators.required, Validators.pattern(/^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/)]],
+            currentDate: ['', [Validators.required]],
         })
     }
+
 
 }

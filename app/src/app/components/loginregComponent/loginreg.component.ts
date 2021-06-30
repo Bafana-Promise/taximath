@@ -42,12 +42,6 @@ export class loginregComponent extends NBaseComponent implements OnInit {
     ngOnInit() {
         this.getUsers();
     }
-    // submitReg(form) {
-    //     this.registerUserService.registerUser(form.value).then(res => {
-    //         console.log(res)
-    //     })
-    //     console.log(form.value)
-    // }
     registerUser(form) {
         this.submitted = true;
         if (form.valid) {
@@ -55,6 +49,8 @@ export class loginregComponent extends NBaseComponent implements OnInit {
             delete form.value.confpassword
             console.log(form.value);
             this.registerUserService.registerUser(form.value).then(res => {
+                this.showLogin = true;
+                this.getUsers();
                 this.matsnackbar.open("User Stored Successfully", 'Close', {
                     duration: 2500
                 });
@@ -62,8 +58,7 @@ export class loginregComponent extends NBaseComponent implements OnInit {
                 this.matsnackbar.open("User not stored ", 'Close', {
                     duration: 2500
                 });
-            })
-
+            })        
         } else {
             this.matsnackbar.open("Fill in your Credetials", 'Close', {
                 duration: 4500
@@ -76,9 +71,6 @@ export class loginregComponent extends NBaseComponent implements OnInit {
         this.registerUserService.getUsers().then(res => {
             this.users = res.local.result;
             console.log(res);
-            this.matsnackbar.open("Users Found", 'Close', {
-                duration: 2500
-            });
         }, err => {
             this.matsnackbar.open("User not stored ", 'Close', {
                 duration: 2500
@@ -95,11 +87,15 @@ export class loginregComponent extends NBaseComponent implements OnInit {
             confpassword: ['', [Validators.required, Validators.pattern(/^(?=.*[a-zA-Z0-9])(?!.*[!\-`~() +=<>])(?=.*[@#$%^&*/]).{6,12}$/)]]
         })
     }
+
+
     login(form) {
         this.users.forEach(user => {
             if (form.value.email == user.email && form.value.password == user.password) {
                 this.foundUser = true;
                 this.router.navigate(['tripsadded']);
+                sessionStorage.setItem("user", JSON.stringify(user))
+                console.log(user)
             }
         })
         if (!this.foundUser) {
@@ -120,29 +116,3 @@ export class loginregComponent extends NBaseComponent implements OnInit {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-//   getCityName(userForm){
-//         this.weatherappService.cityName(userForm.value).then(res => {
-//             // this.jokeFromServer = res.local.result;
-//             this.locationName = res.local.result.payload.main.temp;
-//             this.currentSky = res.local.result.payload.weather[0].description;
-//             this.mintemper = res.local.result.payload.main.temp_min;
-//             this.maxtemper = res.local.result.payload.main.temp_max;
-//             this.cityNameFromserver = res.local.result.payload.name;
-//             this.currentDate = res.local.result.headers.date;
-//             console.log(this.cityNameFromserver)
-//             console.log(res)
-//             console.log(this.locationName);
-//         })
-
-//     }

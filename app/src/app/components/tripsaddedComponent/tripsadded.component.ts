@@ -4,6 +4,10 @@ import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { dialogComponent } from '../dialogComponent/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { tripsOfUser } from 'app/sd-services/tripsOfUser';
+import { commonService } from 'app/services/common/common.service';
+import { Router } from '@angular/router';
+
 
 /*
 Client Service import Example:
@@ -21,44 +25,79 @@ import { HeroService } from '../../services/hero/hero.service';
 })
 
 export class tripsaddedComponent extends NBaseComponent implements OnInit {
-    ObjValueFromDialog: any= [];
+    cardObj;
+    departFromServer;
+    destinationFromServer;
+    amountFromServer;
+    dateFromServer;
 
-    constructor(private matsnackbar: MatSnackBar, private dialog: MatDialog) {
+    usersTrip;
+    loggedInUser;
+    oneUserTrip;
+
+    constructor(private matsnackbar: MatSnackBar, private dialog: MatDialog, private tripsService: tripsOfUser, private commonservice: commonService, private router: Router) {
         super();
     }
 
     ngOnInit() {
+        this.loggedInUser = this.commonservice.getUser()
+        // this.getTripsFromServer();
+        this.showCard();
+        this.getTrip();
+        if (!this.commonservice.getUser()) {
+            this.matsnackbar.open("You're not Logged In", 'Close', {
+                duration: 4500
+            });
+            this.router.navigate(["loginreg"]);
+        }
     }
 
-    openDialog() {
-        this.dialog.open(dialogComponent).afterClosed().subscribe(result => {
-            this.ObjValueFromDialog.push(result);
-            console.log(result)
-            console.log(this.ObjValueFromDialog);
-            console.log(result);
-        });
-        console.log("Dialog Works");
-        this.matsnackbar.open("Dialog Works", 'Close', {
-            duration: 9500
-        });
+    getTripsFromServer() {
+        this.tripsService.getTrips().then(res => {
+            this.usersTrip = res.local.result;
+            console.log(this.loggedInUser)
+            console.log(this.usersTrip);
+        }, err => {
+            this.matsnackbar.open("Trip not stored ", 'Close', {
+                duration: 2500
+            });
+        })
     }
 
+    showCard() {
+        this.cardObj = this.usersTrip;
+        console.log(this.usersTrip);
+    }
 
+    // openDialog() {
+    // this.dialog.open(dialogComponent, {
+    //         width: '390px',
+    //     });
+    //     dialogRef.afterClosed().subscribe(result => {
+    //         console.log('The dialog was closed');
+    //         console.log(result);
+    //     });
+
+    // }
+  openRegDialog() {
+    //open register dialog
+    this.dialog.open(dialogComponent,{width: '390px',}).afterClosed().subscribe(result => {
+        console.log(result)
+        console.log('The dialog was closed');
+    })
+  };
+
+    logout() {
+        sessionStorage.clear()
+        this.router.navigate(["loginreg"])
+    };
+
+    getTrip(){
+        this.tripsService.getOneTrip(this.loggedInUser.email).then(res =>{
+            this.oneUserTrip = res.local.result
+            console.log(this.oneUserTrip)
+        })
+
+    }
 
 }
-
-//   openRegDialog() {
-//     //open register dialog
-//     this.dialog.open(RegdialogComponent).afterClosed().subscribe(result => {
-//       // check if with the entered ID exist
-//       // we need to push the class object into the student class array
-//       if (result) {
-//         //if it's true return the selected
-//         this.student.classes.registered.push(result);
-//         localStorage.setItem("student", JSON.stringify(this.student))
-
-//         this.refreshData();
-
-//       }
-//     })
-//   }

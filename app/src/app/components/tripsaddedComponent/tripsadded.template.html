@@ -1,32 +1,38 @@
 <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
-  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <h1>
-          Taxi Maths</h1>
+          Taxi Maths </h1>
       </div>
       <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
         <h1>
-          Calculator</h1>
+          <span routerLink="/taxicalc">Calculator</span>
+        </h1>
         <h1>
-          Tracker</h1>
+          <span routerLink="/loginreg">Tracker</span>
+        </h1>
       </div>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="column wrap" fxLayoutGap="12px" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false">
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="openDialog()">Add Trip</button></div>
+    <div fxLayout="column wrap" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="row wrap" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="openRegDialog()">Add Trip</button><button mat-raised-button (click)="logout()">Login Out</button></div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="12px" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" fxLayoutGap="12px" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false" *ngFor="let trip of oneUserTrip">
         <mat-card>
-          <img mat-card-image>
+          <mat-card-title align="center">Trip</mat-card-title>
+
+          <mat-card-subtitle align="center">Trip Traveled</mat-card-subtitle>
 
           <mat-card-content>
             <div>
-              Depart</div>
+              Depart : {{trip.currentlocation}}</div>
             <div>
-              Destination</div>
+              Destination : {{trip.to}}</div>
             <div>
-              Amount</div>
+              Amount : {{trip.amount}}</div>
             <div>
-              Date</div>
+              Date : {{trip.currentDate | date: &apos;medium&apos;}} </div>
           </mat-card-content>
 
           <mat-card-actions></mat-card-actions>

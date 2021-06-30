@@ -1,17 +1,17 @@
 <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
-  <div fxLayout="column wrap" fxFlex="100       " fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <mat-card>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <mat-card class="cardContainer">
       <mat-card-title align="center">Add Trip</mat-card-title>
 
       <mat-card-subtitle align="center">Trips to Travel</mat-card-subtitle>
 
       <img mat-card-image>
 
-      <mat-card-content style="width: 50%;">
+      <mat-card-content>
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
           <form [formGroup]="formValue">
             <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <mat-form-field class="inputWidth" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
                 <input matInput name="currentlocation" placeholder="From" [required]="false" formControlName="currentlocation">
                 <mat-error align="start" *ngIf="formValue.get(&apos;currentlocation&apos;).touched &amp;&amp; formValue.get(&apos;currentlocation&apos;).hasError(&apos;required&apos;)">Departure Location is required</mat-error>
                 <mat-error align="start" *ngIf="formValue.get(&apos;currentlocation&apos;).touched &amp;&amp; formValue.get(&apos;currentlocation&apos;).hasError(&apos;pattern&apos;)">Departure should only contain letters.</mat-error>
@@ -33,7 +33,7 @@
             </div>
             <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
               <mat-form-field [appearance]="&apos;legacy&apos;">
-                <input matInput placeholder="Date " [matDatepicker]="picker" formControlName="currentDate" name="currentDate" [required]="false" [disabled]="false">
+                <input matInput placeholder="Date " [matDatepicker]="picker" formControlName="currentDate" name="currentDate" [min]="minDate" [required]="false" [disabled]="false">
                 <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
                 <mat-datepicker #picker [disabled]="false"></mat-datepicker>
                 <mat-error align="start" *ngIf="formValue.get(&apos;currentDate&apos;).touched &amp;&amp; formValue.get(&apos;currentDate&apos;).hasError(&apos;required&apos;)">Date is required</mat-error>
