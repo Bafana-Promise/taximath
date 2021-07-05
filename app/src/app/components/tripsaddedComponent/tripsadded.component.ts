@@ -25,15 +25,10 @@ import { HeroService } from '../../services/hero/hero.service';
 })
 
 export class tripsaddedComponent extends NBaseComponent implements OnInit {
-    cardObj;
-    departFromServer;
-    destinationFromServer;
-    amountFromServer;
-    dateFromServer;
 
-    usersTrip;
+    usersTrip:any =[];
     loggedInUser;
-    oneUserTrip;
+    oneUserTrip: any =[];
 
     constructor(private matsnackbar: MatSnackBar, private dialog: MatDialog, private tripsService: tripsOfUser, private commonservice: commonService, private router: Router) {
         super();
@@ -41,15 +36,16 @@ export class tripsaddedComponent extends NBaseComponent implements OnInit {
 
     ngOnInit() {
         this.loggedInUser = this.commonservice.getUser()
-        // this.getTripsFromServer();
-        this.showCard();
-        this.getTrip();
+
         if (!this.commonservice.getUser()) {
+            console.log("hi hello")
             this.matsnackbar.open("You're not Logged In", 'Close', {
                 duration: 4500
             });
             this.router.navigate(["loginreg"]);
         }
+        this.getTrip();
+        this.getTripsFromServer()
     }
 
     getTripsFromServer() {
@@ -64,40 +60,73 @@ export class tripsaddedComponent extends NBaseComponent implements OnInit {
         })
     }
 
-    showCard() {
-        this.cardObj = this.usersTrip;
-        console.log(this.usersTrip);
+    openRegDialog() {
+        this.dialog.open(dialogComponent, { width: '390px', }).afterClosed().subscribe(result => {
+            console.log(result)
+            result['email'] = this.loggedInUser['email'];
+            this.tripsService.usersTrip(result).then(res => {
+                console.log(res);
+                this.getTrip()
+                this.matsnackbar.open("Trip Stored Successfully", 'Close', {
+                    duration: 2500
+                });
+            }, err => {
+                this.matsnackbar.open("Trip not stored ", 'Close', {
+                    duration: 2500
+                });
+            })
+
+            console.log('The dialog was closed');
+        })
+
+    };
+
+    getTrip() {
+        this.tripsService.getOneTrip(this.loggedInUser.email).then(res => {
+            this.oneUserTrip = res.local.result
+            console.log(res)
+        })
     }
-
-    // openDialog() {
-    // this.dialog.open(dialogComponent, {
-    //         width: '390px',
-    //     });
-    //     dialogRef.afterClosed().subscribe(result => {
-    //         console.log('The dialog was closed');
-    //         console.log(result);
-    //     });
-
-    // }
-  openRegDialog() {
-    //open register dialog
-    this.dialog.open(dialogComponent,{width: '390px',}).afterClosed().subscribe(result => {
-        console.log(result)
-        console.log('The dialog was closed');
-    })
-  };
 
     logout() {
         sessionStorage.clear()
         this.router.navigate(["loginreg"])
     };
+    
+    deleteTrip(id) {
+        console.log(id)
 
-    getTrip(){
-        this.tripsService.getOneTrip(this.loggedInUser.email).then(res =>{
-            this.oneUserTrip = res.local.result
-            console.log(this.oneUserTrip)
+        this.tripsService.removeTrip(id).then(res => {
+            console.log(res);
+            this.getTrip()
         })
+            ;
 
+    }
+
+    addTrip(form) {
+        this.submitted = true;
+        if (form.valid) {
+            console.log(form);
+            console.log(form.value);
+            this.loggedInUser = this.commonservice.getUser()
+            let data = form.value;
+            data['email'] = this.loggedInUser['email'];
+            this.tripsService.usersTrip(data).then(res => {
+                console.log(res);
+                this.matsnackbar.open("Trip Stored Successfully", 'Close', {
+                    duration: 2500
+                });
+            }, err => {
+                this.matsnackbar.open("Trip not stored ", 'Close', {
+                    duration: 2500
+                });
+            })
+        } else {
+            this.matsnackbar.open("Fill in your Detials", 'Close', {
+                duration: 4500
+            });
+        }
     }
 
 }

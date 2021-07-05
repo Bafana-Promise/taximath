@@ -89,7 +89,7 @@
                 },
                 {
                     "_key": "class",
-                    "_value": "",
+                    "_value": [],
                     "_type": "dav",
                     "_attrDef": "p"
                 },
@@ -136,7 +136,7 @@
                     "_attrDef": "p"
                 }
             ],
-            "4aae4ae7-a220-d52f-bbe9-8dec40bab0c5": {
+            "140da613-24ce-2663-c4b6-fac34f8ffacc": {
                 "paletteKey": "FlexLayoutRow",
                 "parentEditorKey": "6c101dcc-861b-b149-2fe3-0864fd3f782d",
                 "designerReference": [
@@ -155,7 +155,9 @@
                     },
                     {
                         "_key": "class",
-                        "_value": "",
+                        "_value": [
+                            "toolBarBackground"
+                        ],
                         "_type": "dav",
                         "_attrDef": "p"
                     },
@@ -202,9 +204,9 @@
                         "_attrDef": "p"
                     }
                 ],
-                "5f336548-14f9-fc64-f15c-c5a9d0224ef4": {
+                "03934b8c-6908-9794-5336-aecf39b2f52a": {
                     "paletteKey": "FlexLayoutRow",
-                    "parentEditorKey": "4aae4ae7-a220-d52f-bbe9-8dec40bab0c5",
+                    "parentEditorKey": "140da613-24ce-2663-c4b6-fac34f8ffacc",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -268,9 +270,9 @@
                             "_attrDef": "p"
                         }
                     ],
-                    "5291ef70-d58a-d060-a599-da334b5ad127": {
+                    "e984df5d-faee-2749-918a-e3f6400b416c": {
                         "paletteKey": "Html5",
-                        "parentEditorKey": "5f336548-14f9-fc64-f15c-c5a9d0224ef4",
+                        "parentEditorKey": "03934b8c-6908-9794-5336-aecf39b2f52a",
                         "isAdvancedComponent": true,
                         "designerReference": [
                             {
@@ -281,7 +283,11 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "taxHeader",
+                                    "positionRelative",
+                                    "lightGrey"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -454,9 +460,9 @@
                                 "_visibility": false
                             }
                         ],
-                        "188bc39f-5dbd-7547-a530-8c540610c14a": {
+                        "2a0ae0fd-2bd8-cd45-b386-7dff02f2d74d": {
                             "paletteKey": "html-editor",
-                            "parentEditorKey": "5291ef70-d58a-d060-a599-da334b5ad127",
+                            "parentEditorKey": "e984df5d-faee-2749-918a-e3f6400b416c",
                             "isAdvancedChildComponent": true,
                             "designerReference": [
                                 {
@@ -473,7 +479,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "Taxi Maths ",
+                                    "_value": "Trips",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -481,9 +487,9 @@
                         }
                     }
                 },
-                "875bf41b-7b22-fc56-a583-6d2323531ab4": {
+                "aa38f2b1-0c1b-bc42-a22a-4ca971ca54ad": {
                     "paletteKey": "FlexLayoutRow",
-                    "parentEditorKey": "4aae4ae7-a220-d52f-bbe9-8dec40bab0c5",
+                    "parentEditorKey": "140da613-24ce-2663-c4b6-fac34f8ffacc",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -512,7 +518,7 @@
                         },
                         {
                             "_key": "fxLayoutGap",
-                            "_value": "15px",
+                            "_value": "25px",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -547,9 +553,9 @@
                             "_attrDef": "p"
                         }
                     ],
-                    "fa3f666b-e77e-36e1-6fad-bad0d7fff486": {
+                    "f040eb61-3c8a-2ff0-3273-a6d838ebc80c": {
                         "paletteKey": "Html5",
-                        "parentEditorKey": "875bf41b-7b22-fc56-a583-6d2323531ab4",
+                        "parentEditorKey": "aa38f2b1-0c1b-bc42-a22a-4ca971ca54ad",
                         "isAdvancedComponent": true,
                         "designerReference": [
                             {
@@ -560,7 +566,12 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "cusor",
+                                    "calcContainer",
+                                    "positionRelative",
+                                    "lightGrey"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -733,9 +744,9 @@
                                 "_visibility": false
                             }
                         ],
-                        "28f5f1a4-ca09-c906-ef69-144ad0b623d9": {
+                        "cd2ff7df-fee8-003e-4403-ea685a41fa25": {
                             "paletteKey": "html-editor",
-                            "parentEditorKey": "fa3f666b-e77e-36e1-6fad-bad0d7fff486",
+                            "parentEditorKey": "f040eb61-3c8a-2ff0-3273-a6d838ebc80c",
                             "isAdvancedChildComponent": true,
                             "designerReference": [
                                 {
@@ -752,16 +763,16 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "<span routerLink='/taxicalc'>Calculator</span>",
+                                    "_value": "<span><a href=\"https://www.arrivealive.mobi/road-safety-tips\" class=\"anchorTagstyle\">Safe Travel</a></span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
                             ]
                         }
                     },
-                    "f38bffa3-dd4a-df99-65b4-2cf83bc0ed38": {
+                    "781493fe-bf7d-5161-6d39-d0616e7757f5": {
                         "paletteKey": "Html5",
-                        "parentEditorKey": "875bf41b-7b22-fc56-a583-6d2323531ab4",
+                        "parentEditorKey": "aa38f2b1-0c1b-bc42-a22a-4ca971ca54ad",
                         "isAdvancedComponent": true,
                         "designerReference": [
                             {
@@ -772,7 +783,12 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "cusor",
+                                    "trackerContainer",
+                                    "positionRelative",
+                                    "lightGrey"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -945,9 +961,9 @@
                                 "_visibility": false
                             }
                         ],
-                        "a82ce4d4-c790-8fbf-1784-712b457b5758": {
+                        "b1cf073f-7ba7-052f-b403-86ecf21e6526": {
                             "paletteKey": "html-editor",
-                            "parentEditorKey": "f38bffa3-dd4a-df99-65b4-2cf83bc0ed38",
+                            "parentEditorKey": "781493fe-bf7d-5161-6d39-d0616e7757f5",
                             "isAdvancedChildComponent": true,
                             "designerReference": [
                                 {
@@ -964,7 +980,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "<span routerLink='/loginreg'>Tracker</span>",
+                                    "_value": "<span><a href=\"https://www.google.com/maps/@-26.0921043,27.9834734,15z\" class=\"anchorTagstyle\">Location</a></span>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -1058,7 +1074,9 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": [
+                                "positionRelative"
+                            ],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
@@ -1117,7 +1135,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "addTripContainer"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -1130,7 +1150,7 @@
                             },
                             {
                                 "_key": "color",
-                                "_value": "",
+                                "_value": "primary",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1178,7 +1198,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "addTripContainer"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -1191,7 +1213,7 @@
                             },
                             {
                                 "_key": "color",
-                                "_value": "",
+                                "_value": "warn",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1248,7 +1270,10 @@
                     },
                     {
                         "_key": "class",
-                        "_value": "",
+                        "_value": [
+                            "positionRelative",
+                            "tripmainContainer"
+                        ],
                         "_type": "dav",
                         "_attrDef": "p"
                     },
@@ -1272,7 +1297,7 @@
                     },
                     {
                         "_key": "layoutAlign",
-                        "_value": "center",
+                        "_value": "start",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -1314,7 +1339,10 @@
                         },
                         {
                             "_key": "class",
-                            "_value": [],
+                            "_value": [
+                                "positionRelative",
+                                "tripCard"
+                            ],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
@@ -2355,11 +2383,57 @@
                                 },
                                 {
                                     "_key": "align",
-                                    "_value": "",
+                                    "_value": "justify",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 }
-                            ]
+                            ],
+                            "7f6bc22b-7755-625e-f3af-5b977521d90a": {
+                                "paletteKey": "NG-icon",
+                                "parentEditorKey": "892d06bd-5003-a207-ca36-31267d6fceb1",
+                                "designerReference": [
+                                    {
+                                        "_key": "style",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "class",
+                                        "_value": [
+                                            "cusor",
+                                            "deleteIcon"
+                                        ],
+                                        "_type": "dav",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "IconName",
+                                        "_value": "delete",
+                                        "_type": "a",
+                                        "_attrDef": "p",
+                                        "_useAsLabel": true
+                                    },
+                                    {
+                                        "_key": "[inline]",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "color",
+                                        "_value": "",
+                                        "_type": "kv",
+                                        "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "(click)",
+                                        "_value": "deleteTrip(trip._id)",
+                                        "_type": "kv",
+                                        "_attrDef": "c"
+                                    }
+                                ]
+                            }
                         }
                     }
                 }

@@ -38,7 +38,7 @@
                 <mat-datepicker #picker [disabled]="false"></mat-datepicker>
                 <mat-error align="start" *ngIf="formValue.get(&apos;currentDate&apos;).touched &amp;&amp; formValue.get(&apos;currentDate&apos;).hasError(&apos;required&apos;)">Date is required</mat-error>
               </mat-form-field>
-            </div><button mat-raised-button color="primary" (click)="addTrip(formValue)">Add Trip</button>
+            </div><button mat-raised-button [mat-dialog-close]="formValue.value" color="primary" (click)="addTrip(formValue)" [disabled]="formValue.invalid">Add Trip</button>
           </form>
         </div>
       </mat-card-content>

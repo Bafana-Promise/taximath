@@ -1,51 +1,53 @@
-<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
-  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+<div fxLayout="row wrap" class="mainContainer" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="53px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" class="toolBarBackground" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <h1>
-          Taxi Maths </h1>
+        <h1 class="taxHeader positionRelative lightGrey">
+          Taxi Maths</h1>
       </div>
       <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
-        <h1 class="cusorNav">
-          <span routerLink="/taxicalc">Calculator</span>
+        <h1 class="cusor calcContainer positionRelative lightGrey">
+          <span routerLink="/taxicalc" routerLinkActive="active">Calculator</span>
         </h1>
-        <h1 class="cusorNav">
-          <span routerLink="/loginreg">Tracker</span>
+        <h1 class="cusor trackerContainer positionRelative lightGrey">
+          <span routerLink="/loginreg" routerLinkActive="active">Tracker</span>
         </h1>
       </div>
     </div>
-    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <mat-card>
+    <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+      <mat-card class="cardWidht">
+        <mat-card-title align="center">Taxi Calculate</mat-card-title>
+
         <mat-card-content>
           <form [formGroup]="taxiCalcForm">
             <div fxLayout="column wrap" fxLayoutGap="14px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                  <input matInput name="taxiFare" type="number" placeholder="Taxi Fare" [required]="false" formControlName="taxiFare">
+                <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput name="taxiFare" placeholder="Taxi Fare" [required]="false" formControlName="taxiFare">
                   <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;taxiFare&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;taxiFare&apos;).hasError(&apos;required&apos;)">Taxi Fare is required</mat-error>
-                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;taxiFare&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;taxiFare&apos;).hasError(&apos;pattern&apos;)">Taxi Fare should only contain letters</mat-error>
+                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;taxiFare&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;taxiFare&apos;).hasError(&apos;pattern&apos;)">Taxi Fare should only contain numbers</mat-error>
                 </mat-form-field>
               </div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                  <input matInput name="numOfPassenders" type="number" placeholder="Passenger" [required]="false" formControlName="numOfPassenders">
-                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;numOfPassenders&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;numOfPassenders&apos;).hasError(&apos;required&apos;)">Number Of Passengers is required</mat-error>
-                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;numOfPassenders&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;numOfPassenders&apos;).hasError(&apos;pattern&apos;)">Taxi Fare should only contain letters</mat-error>
+                <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput name="numOfPassengers" placeholder="Passenger" [required]="false" formControlName="numOfPassengers">
+                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;numOfPassengers&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;numOfPassengers&apos;).hasError(&apos;required&apos;)">Number Of Passengers is required</mat-error>
+                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;numOfPassengers&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;numOfPassengers&apos;).hasError(&apos;pattern&apos;)">Taxi Fare should only contain numbers</mat-error>
                 </mat-form-field>
               </div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                  <input matInput name="amountRec" type="number" placeholder="Amount" [required]="false" formControlName="amountRec">
+                <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput name="amountRec" placeholder="Amount" [required]="false" formControlName="amountRec">
                   <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;amountRec&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;amountRec&apos;).hasError(&apos;required&apos;)">Money Recieved is required</mat-error>
-                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;amountRec&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;amountRec&apos;).hasError(&apos;pattern&apos;)">Taxi Fare should only contain letters</mat-error>
+                  <mat-error align="start" *ngIf="taxiCalcForm.get(&apos;amountRec&apos;).touched &amp;&amp; taxiCalcForm.get(&apos;amountRec&apos;).hasError(&apos;pattern&apos;)">Taxi Fare should only contain numbers</mat-error>
                 </mat-form-field>
               </div>
               <div>
                 Change : R {{getChange(result)}}</div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
                 <div fxLayout="row wrap" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-                  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="primary" (click)="calculate(taxiCalcForm)">Calculate</button></div>
-                  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="warn">Reset</button></div>
+                  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="primary" (click)="calculate(taxiCalcForm)" [disabled]="taxiCalcForm.invalid">Calculate</button></div>
+                  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="warn" (click)="reset(taxiCalcForm)">Reset</button></div>
                 </div>
               </div>
               <div>

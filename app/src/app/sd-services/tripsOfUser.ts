@@ -113,6 +113,33 @@ export class tripsOfUser {
     }
   }
 
+  async removeTrip(id: any = undefined, ...others) {
+    try {
+      var bh = {
+        input: {
+          id: id,
+        },
+        local: {
+          result: undefined,
+        },
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_7SVO9AJguMF8gDFx(bh);
+      //appendnew_next_removeTrip
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            result: bh.local.result,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_FX9ibm8wDq2OPiwF');
+    }
+  }
+
   //appendnew_flow_tripsOfUser_start
 
   async sd_f12rjlWAlV8BxRuW(bh) {
@@ -213,6 +240,45 @@ export class tripsOfUser {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_yUfz0TD86cJjb71U');
+    }
+  }
+
+  async sd_7SVO9AJguMF8gDFx(bh) {
+    try {
+      bh.local.result = {};
+      bh.input.query = {
+        id: bh.input.id,
+      };
+      console.log(bh.input);
+      bh = await this.sd_rkbKI88ivfDN1T93(bh);
+      //appendnew_next_sd_7SVO9AJguMF8gDFx
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_7SVO9AJguMF8gDFx');
+    }
+  }
+
+  async sd_rkbKI88ivfDN1T93(bh) {
+    try {
+      let basePath = bh.system.environment.properties.ssdURL.endsWith('/')
+        ? bh.system.environment.properties.ssdURL
+        : bh.system.environment.properties.ssdURL + '/';
+      let url = `deleteTrip/${bh.input.id}/`;
+      let finalUrl = basePath + url;
+      let requestOptions = {
+        url: finalUrl,
+        method: 'delete',
+        responseType: 'json',
+        reportProgress: undefined,
+        headers: {},
+        params: undefined,
+        body: bh.input.id,
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      //appendnew_next_sd_rkbKI88ivfDN1T93
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_rkbKI88ivfDN1T93');
     }
   }
 

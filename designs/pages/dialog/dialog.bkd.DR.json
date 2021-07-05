@@ -1572,9 +1572,10 @@
                                     },
                                     {
                                         "_key": "[disabled]",
-                                        "_value": "",
+                                        "_value": "formValue.invalid",
                                         "_type": "kv",
-                                        "_attrDef": "p"
+                                        "_attrDef": "p",
+                                        "_customAttributeFlag": true
                                     },
                                     {
                                         "_key": "[disableRipple]",
@@ -1593,6 +1594,12 @@
                                         "_value": "",
                                         "_type": "kv",
                                         "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "[mat-dialog-close]",
+                                        "_value": "formValue.value",
+                                        "_type": "kv",
+                                        "_attrDef": "c"
                                     }
                                 ]
                             }

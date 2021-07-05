@@ -253,6 +253,58 @@ export class tripValueDatabase {
         this.generatedMiddlewares
       )
     );
+
+    if (!this.swaggerDocument['paths']['/deleteTrip/{id}']) {
+      this.swaggerDocument['paths']['/deleteTrip/{id}'] = {
+        delete: {
+          summary: '',
+          description: '',
+          consumes: [],
+          produces: [],
+          parameters: [],
+          responses: {},
+        },
+      };
+    } else {
+      this.swaggerDocument['paths']['/deleteTrip/{id}']['delete'] = {
+        summary: '',
+        description: '',
+        consumes: [],
+        produces: [],
+        parameters: [],
+        responses: {},
+      };
+    }
+    this.app['delete'](
+      `${this.serviceBasePath}/deleteTrip/:id`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          bh = await this.sd_3FbuGDhQyOyNiuju(bh);
+          //appendnew_next_sd_fXHiXhkKQxWBKu9g
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_fXHiXhkKQxWBKu9g');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_tripValueDatabase_HttpIn
   }
   //   service flows_tripValueDatabase
@@ -336,6 +388,7 @@ export class tripValueDatabase {
   async sd_gAgpKoOZwm24SQ0q(bh) {
     try {
       console.log(bh);
+
       bh = await this.sd_hkllIUE3XBADZlYV(bh);
       //appendnew_next_sd_gAgpKoOZwm24SQ0q
       return bh;
@@ -378,6 +431,60 @@ export class tripValueDatabase {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_NT0jO7gHW7qov92t');
+    }
+  }
+
+  async sd_3FbuGDhQyOyNiuju(bh) {
+    try {
+      console.log(bh);
+      const ObjectId = require('mongodb').ObjectId;
+
+      bh.filter = { _id: ObjectId(bh.input.params.id) };
+
+      console.log(bh.filter);
+
+      bh = await this.sd_LEOTZ5dQU49dqyzs(bh);
+      //appendnew_next_sd_3FbuGDhQyOyNiuju
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_3FbuGDhQyOyNiuju');
+    }
+  }
+
+  async sd_LEOTZ5dQU49dqyzs(bh) {
+    try {
+      bh.local.result = await MongoPersistance.getInstance().findOneAndDelete(
+        'sd_uvyVN2fYfNYMS47U',
+        'trips',
+        bh.filter,
+        {}
+      );
+      bh = await this.sd_aUF6QStv7ljGjh9f(bh);
+      //appendnew_next_sd_LEOTZ5dQU49dqyzs
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_LEOTZ5dQU49dqyzs');
+    }
+  }
+
+  async sd_aUF6QStv7ljGjh9f(bh) {
+    try {
+      console.log(bh);
+      await this.sd_yaBJg09Gy0ZsF4v9(bh);
+      //appendnew_next_sd_aUF6QStv7ljGjh9f
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_aUF6QStv7ljGjh9f');
+    }
+  }
+
+  async sd_yaBJg09Gy0ZsF4v9(bh) {
+    try {
+      bh.web.res.status(200).send(bh.local.result);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_yaBJg09Gy0ZsF4v9');
     }
   }
 

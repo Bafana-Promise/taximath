@@ -1,24 +1,24 @@
 <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
   <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" class="toolBarBackground" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <h1>
-          Taxi Maths </h1>
+        <h1 class="taxHeader positionRelative lightGrey">
+          Trips</h1>
       </div>
-      <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
-        <h1>
-          <span routerLink="/taxicalc">Calculator</span>
+      <div fxLayout="row wrap" fxLayoutGap="25px" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+        <h1 class="cusor calcContainer positionRelative lightGrey">
+          <span><a href="https://www.arrivealive.mobi/road-safety-tips" class="anchorTagstyle">Safe Travel</a></span>
         </h1>
-        <h1>
-          <span routerLink="/loginreg">Tracker</span>
+        <h1 class="cusor trackerContainer positionRelative lightGrey">
+          <span><a href="https://www.google.com/maps/@-26.0921043,27.9834734,15z" class="anchorTagstyle">Location</a></span>
         </h1>
       </div>
     </div>
     <div fxLayout="column wrap" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="row wrap" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="openRegDialog()">Add Trip</button><button mat-raised-button (click)="logout()">Login Out</button></div>
+      <div fxLayout="row wrap" class="positionRelative" fxLayoutGap="12px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button class="addTripContainer" color="primary" (click)="openRegDialog()">Add Trip</button><button mat-raised-button class="addTripContainer" color="warn" (click)="logout()">Login Out</button></div>
     </div>
-    <div fxLayout="row wrap" fxLayoutGap="12px" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="column wrap" fxLayoutGap="12px" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false" *ngFor="let trip of oneUserTrip">
+    <div fxLayout="row wrap" class="positionRelative tripmainContainer" fxLayoutGap="12px" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" class="positionRelative tripCard" fxLayoutGap="12px" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false" *ngFor="let trip of oneUserTrip">
         <mat-card>
           <mat-card-title align="center">Trip</mat-card-title>
 
@@ -35,7 +35,9 @@
               Date : {{trip.currentDate | date: &apos;medium&apos;}} </div>
           </mat-card-content>
 
-          <mat-card-actions></mat-card-actions>
+          <mat-card-actions align="justify">
+            <mat-icon class="cusor deleteIcon" (click)="deleteTrip(trip._id)">delete</mat-icon>
+          </mat-card-actions>
         </mat-card>
       </div>
     </div>

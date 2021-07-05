@@ -2,6 +2,27 @@
     "classes": [
         "cusor",
         "cusorNav",
-        "cardContainer"
+        "lightGrey",
+        "active",
+        "cardWidht",
+        "toolBarBackground",
+        "cardContainer",
+        "mainContainer",
+        "positionRelative",
+        "taxHeader",
+        "calcContainer",
+        "trackerContainer",
+        "positionAbsolute",
+        "widthContainer",
+        "loginCotainer",
+        "loginCard",
+        "tripmainContainer",
+        "tripCard",
+        "mat-card",
+        "addTripContainer",
+        "tripIMGman",
+        "anchorTagstyle",
+        "deleteIcon",
+        "editIcon"
     ]
 }

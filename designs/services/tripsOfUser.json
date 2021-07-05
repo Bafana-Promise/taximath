@@ -82,12 +82,10 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlValue": "addTripUser",
         "url": "addTripUser",
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "reqBody": "bh.input.trip",
         "reqBodyObj": {
@@ -101,11 +99,9 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "inputVariables": [],
         "inputParams": [],
@@ -118,7 +114,8 @@
             []
         ],
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "tripsOfUser"
     },
     {
         "id": "sd_JBTfZ2HrqLL02ksO",
@@ -295,6 +292,120 @@
         "__n_excludedFromValidation__": {},
         "x": 365,
         "y": 380,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_FX9ibm8wDq2OPiwF",
+        "type": "Start",
+        "z": "sd_PmYwQruC6XdabDpX",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "removeTrip",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "removeTrip",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 65,
+        "y": 500,
+        "wires": [
+            [
+                "sd_7SVO9AJguMF8gDFx"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "tripsOfUser"
+    },
+    {
+        "id": "sd_7SVO9AJguMF8gDFx",
+        "type": "Script",
+        "z": "sd_PmYwQruC6XdabDpX",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.result = {}\nbh.input.query = {\n    id: bh.input.id\n}\nconsole.log(bh.input)",
+        "functionName": "sd_7SVO9AJguMF8gDFx",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 290,
+        "y": 500,
+        "wires": [
+            [
+                "sd_rkbKI88ivfDN1T93"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_rkbKI88ivfDN1T93",
+        "type": "CallSSDApi",
+        "z": "sd_PmYwQruC6XdabDpX",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "method": "delete",
+        "methodMappingObj": {},
+        "urlValue": "deleteTrip",
+        "url": "deleteTrip/:id",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.id",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "id"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "paramMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "inputVariables": [
+            {
+                "key": "id",
+                "valueType": "bh",
+                "value": "input.id"
+            }
+        ],
+        "inputParams": [
+            "bh.input.id"
+        ],
+        "functionName": "sd_rkbKI88ivfDN1T93",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 525,
+        "y": 500,
         "wires": [
             []
         ],

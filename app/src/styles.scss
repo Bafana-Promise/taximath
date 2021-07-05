@@ -2,14 +2,106 @@
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
+// Taxi Calculator
+$darkGrey: #18191a;
+$lighterGrey: #d3d5d9;
+$lightblack: #3a3b3c;
+.cusor {
+    cursor: pointer;
+}
+.cusorNav {
+    color: #0095f6;
+}
 
-.cusor{
-    cursor: pointer;
-    color: blue;
+.lightGrey {
+    color: $lighterGrey;
+    .active{
+        color: #f1f1f1;
+    }
 }
-.cusorNav{
-    cursor: pointer;
+
+.lightGrey :hover{
+    color: #f1f3f4;
 }
-.cardContainer{
+
+.cardWidht {
+    width: 18%;
+}
+
+.toolBarBackground {
+    background-color: $lightblack;
+}
+
+.cardContainer {
     width: '390px';
+}
+
+.mainContainer {
+    background-image: url("assets/Web/Icons/taxi2SA.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.positionRelative {
+    position: relative;
+}
+
+.taxHeader {
+    left: 20px;
+}
+
+.calcContainer {
+    right: 32px;
+}
+
+.trackerContainer {
+    right: 32px;
+}
+
+.positionAbsolute {
+    position: absolute;
+}
+
+.widthContainer {
+    font-size: xx-large;
+    margin-top: 86px;
+}
+// Login and Register
+.loginCotainer{
+    width: 100%;
+}
+.loginCard{
+    width: 137%;
+}
+// trips 
+.tripmainContainer {
+    background-image: url("assets/Web/Icons/africa.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 81.5%;
+}
+
+.tripCard{
+    .mat-card:not([class*=mat-elevation-z]) {
+    margin-top: 12px !important;
+    left: 62px;
+ }
+}
+.addTripContainer{
+    left: 22px;
+}
+.tripIMGman{
+    height: 12px;
+}
+.anchorTagstyle{
+    color: $lighterGrey;
+    text-decoration: none;
+}
+.deleteIcon{
+    color: red;
+}
+.editIcon{
+    color: green;
 }

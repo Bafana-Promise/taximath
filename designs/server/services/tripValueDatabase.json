@@ -39,7 +39,6 @@
                 }
             }
         },
-        "uploadFileOptions": {},
         "editableListData": {
             "responses": [],
             "params": [],
@@ -171,7 +170,6 @@
             "obj": "bh.local.result",
             "send": "bh.local.result"
         },
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "editableListData": {
@@ -189,7 +187,8 @@
         "y": 220,
         "wires": [],
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "tripValueDatabase"
     },
     {
         "id": "sd_P7fbim5vFePBiO4a",
@@ -220,7 +219,6 @@
                 }
             }
         },
-        "uploadFileOptions": {},
         "editableListData": {
             "responses": [],
             "params": [],
@@ -346,7 +344,6 @@
             "obj": "bh.local.result",
             "send": "bh.local.result"
         },
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "editableListData": {
@@ -529,7 +526,7 @@
         "operations": "",
         "query": "bh.input.query",
         "fieldOrSpec": "",
-        "filter": "",
+        "filter": "bh.filter",
         "key": "",
         "docId": "",
         "indexName": "",
@@ -568,6 +565,11 @@
                 "type": "bh.input",
                 "value": "query",
                 "constant": false
+            },
+            "filter": {
+                "type": "bh",
+                "value": "filter",
+                "constant": false
             }
         },
         "__n_excludedFromValidation__": {},
@@ -588,7 +590,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh)",
+        "script": "console.log(bh)\n",
         "functionName": "sd_gAgpKoOZwm24SQ0q",
         "category": "Function",
         "__n_excludedFromValidation__": {},
@@ -618,6 +620,227 @@
         "wires": [
             [
                 "sd_NT0jO7gHW7qov92t"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_fXHiXhkKQxWBKu9g",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_FSy9x2XxbQzqEDuv",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "deleteTrip/:id",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "delete",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "deleteTrip/:id": {
+                "delete": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "uploadFileOptions": {},
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 65,
+        "y": 700,
+        "wires": [
+            [
+                "sd_3FbuGDhQyOyNiuju"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "tripValueDatabase",
+        "functionName": "sd_fXHiXhkKQxWBKu9g"
+    },
+    {
+        "id": "sd_yaBJg09Gy0ZsF4v9",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_FSy9x2XxbQzqEDuv",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_yaBJg09Gy0ZsF4v9",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 600,
+        "y": 700,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_LEOTZ5dQU49dqyzs",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_FSy9x2XxbQzqEDuv",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_uvyVN2fYfNYMS47U",
+        "collection": "\"trips\"",
+        "options": "",
+        "resultMapping": "bh.local.result",
+        "operation": "findOneAndDelete",
+        "argumentArray": [
+            "filter"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "bh.filter",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_LEOTZ5dQU49dqyzs",
+        "category": "Storage",
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "str",
+                "value": "trips",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "filter": {
+                "type": "bh",
+                "value": "filter",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 305,
+        "y": 700,
+        "wires": [
+            [
+                "sd_aUF6QStv7ljGjh9f"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_3FbuGDhQyOyNiuju",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_FSy9x2XxbQzqEDuv",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh)\nconst ObjectId = require('mongodb').ObjectId;\n\nbh.filter = {_id: ObjectId(bh.input.params.id)};\n\nconsole.log(bh.filter)\n",
+        "functionName": "sd_3FbuGDhQyOyNiuju",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 180,
+        "y": 700,
+        "wires": [
+            [
+                "sd_LEOTZ5dQU49dqyzs"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_aUF6QStv7ljGjh9f",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_FSy9x2XxbQzqEDuv",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh)",
+        "functionName": "sd_aUF6QStv7ljGjh9f",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 440,
+        "y": 700,
+        "wires": [
+            [
+                "sd_yaBJg09Gy0ZsF4v9"
             ]
         ],
         "generateNext": false,

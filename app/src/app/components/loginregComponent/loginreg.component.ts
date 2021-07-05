@@ -67,6 +67,7 @@ export class loginregComponent extends NBaseComponent implements OnInit {
         }
     }
 
+// get users
     getUsers() {
         this.registerUserService.getUsers().then(res => {
             this.users = res.local.result;
@@ -90,6 +91,7 @@ export class loginregComponent extends NBaseComponent implements OnInit {
 
 
     login(form) {
+        //for each user
         this.users.forEach(user => {
             if (form.value.email == user.email && form.value.password == user.password) {
                 this.foundUser = true;
